@@ -14,7 +14,6 @@ const AdminLogin: React.FC = () => {
       return;
     }
 
-    // Only allow admin email
     if (email.toLowerCase() !== "jadhavaj7620@gmail.com") {
       alert("Unauthorized access. Only admin email is allowed.");
       return;
@@ -35,7 +34,7 @@ const AdminLogin: React.FC = () => {
       } else {
         alert(data.error || "Error sending OTP");
       }
-    } catch (error) {
+    } catch {
       alert("Network error. Please try again.");
     } finally {
       setLoading(false);
@@ -63,7 +62,7 @@ const AdminLogin: React.FC = () => {
       } else {
         alert(data.error || "Invalid OTP");
       }
-    } catch (error) {
+    } catch {
       alert("Network error. Please try again.");
     } finally {
       setLoading(false);
@@ -127,7 +126,9 @@ const AdminLogin: React.FC = () => {
                 type="text"
                 placeholder="Enter 6-digit OTP"
                 value={otp}
-                onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                onChange={(e) =>
+                  setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
+                }
                 className="border border-gray-300 p-3 w-full rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-center text-lg font-mono"
                 maxLength={6}
                 required
