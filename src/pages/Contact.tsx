@@ -30,7 +30,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
   e.preventDefault();
 
   try {
-    const response: Response = await fetch("https://ecocarbonbackend.onrender.com/api/contact", {
+    const response: Response = await fetch("https://carbonbackend-r26f.onrender.com/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
