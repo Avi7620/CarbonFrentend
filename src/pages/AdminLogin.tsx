@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const API_BASE = "https://ecocarbonbackend.onrender.com/api";
+const API_BASE = "https://carbonbackend-r26f.onrender.com/api";
 
 const AdminLogin: React.FC = () => {
   const [email, setEmail] = useState("");
